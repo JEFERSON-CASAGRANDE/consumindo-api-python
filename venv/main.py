@@ -4,8 +4,7 @@ import sys
 
 
 def search_clima(city):
-    key='8f56125'
-    request = requests.get(f"https://api.hgbrasil.com/weather?key={key}c&city_name={city}")
+    request = requests.get(f"https://api.hgbrasil.com/weather?key=8f56125c&city_name={city}")
     data = json.loads(request.content)
     city_name = data['results']['city_name']
     forecast = data['results']['forecast']
@@ -22,4 +21,3 @@ def search_clima(city):
 if __name__ == '__main__':
     param = sys.argv[1:]
     search_clima(param)
-
